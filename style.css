@@ -1,1 +1,23 @@
-Initial CSS upload
+:root {
+  --navy: #0B1B3D;
+  --gold: #C5A880;
+  --bg-color: #070B13;
+}
+
+/* Paddle Bullet System */
+.paddle-bullet { list-style: none; padding-left: 0; }
+.paddle-bullet li { 
+  position: relative; 
+  padding-left: 42px; 
+  margin-bottom: 12px; 
+  color: #FFFFFF;
+}
+.paddle-bullet li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 28px;
+  height: 28px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><g fill=%22none%22 stroke=%22%23C5A880%22 stroke-width=%222.2%22><path d=%22M4 16 L28 16 M8 10 L8 22 M24 10 L24 22 M16 4 L16 28%22/></g></svg>');
+}
