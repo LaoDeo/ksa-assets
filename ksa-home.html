@@ -3,28 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kayak Strategic Advisors | Home</title>
-    
     <meta name="robots" content="noindex, nofollow">
+    <title>Kayak Strategic Advisors - Home</title>
     
     <link rel="stylesheet" href="https://laodeo.github.io/ksa-assets/ksa-theme.css">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:opsz,wght@9..40,400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS Reset & Variables */
+        /* Base Variables & Reset */
         :root {
-            --bg-dark: #070B13;
-            --bg-darker: #04060A;
-            --gold: #C5A880;
-            --text-muted: #8E9AA8;
-            --text-light: #F4F5F7;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --card-border: rgba(197, 168, 128, 0.15);
-            --font-head: 'Bricolage Grotesque', sans-serif;
+            --brand-dark: #070B13;
+            --brand-gold: #C5A880;
+            --brand-grey: #8E9AA8;
+            --brand-white: #FFFFFF;
+            --brand-light-bg: #F8F9FA;
+            --brand-blue: #0A192F;
+            --font-heading: 'Bricolage Grotesque', sans-serif;
             --font-body: 'DM Sans', sans-serif;
+            --ribbon-height: 40px;
         }
 
         * {
@@ -35,14 +34,15 @@
 
         body {
             font-family: var(--font-body);
-            background-color: var(--bg-darker);
-            color: var(--text-light);
+            color: #333;
+            background-color: var(--brand-white);
             line-height: 1.6;
+            padding-top: var(--ribbon-height);
             overflow-x: hidden;
         }
 
         h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-head);
+            font-family: var(--font-heading);
             font-weight: 800;
         }
 
@@ -52,72 +52,136 @@
             transition: color 0.3s ease;
         }
 
-        a:hover {
-            color: var(--gold);
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
-        /* Top Ribbon */
-        #top-ribbon {
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--brand-blue);
+        }
+
+        /* 1. Top Ribbon Panel */
+        .top-ribbon {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            height: 40px;
-            background: rgba(7, 11, 19, 0.95);
-            backdrop-filter: blur(10px);
+            height: var(--ribbon-height);
+            background-color: var(--brand-dark);
+            color: var(--brand-white);
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            padding: 0 40px;
-            z-index: 9999;
-            border-bottom: 1px solid var(--card-border);
-            font-size: 13px;
+            padding: 0 2rem;
+            z-index: 1000;
+            font-size: 0.85rem;
+            gap: 1.5rem;
         }
 
-        .ribbon-item {
-            margin-left: 24px;
+        .ribbon-search {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
-        .search-bar {
+        .search-input-wrapper {
+            position: relative;
             display: flex;
             align-items: center;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255,255,255,0.1);
             border-radius: 4px;
             padding: 2px 8px;
-            border: 1px solid var(--card-border);
         }
-
-        .search-bar input {
+        
+        .search-input-wrapper input {
             background: transparent;
             border: none;
-            color: var(--text-light);
+            color: white;
             outline: none;
-            padding: 4px;
-            width: 150px;
-            font-size: 12px;
+            width: 120px;
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+        }
+
+        .search-input-wrapper input::placeholder {
+            color: var(--brand-grey);
         }
 
         .search-icon {
             cursor: pointer;
-            font-size: 10px;
-            font-weight: bold;
-            color: var(--gold);
-            padding: 0 4px;
-        }
-
-        /* Hero Section */
-        #hero {
-            position: relative;
-            height: 100vh;
+            font-size: 0.8rem;
             display: flex;
             align-items: center;
-            padding: 0 10%;
+            gap: 4px;
+            color: var(--brand-gold);
+            font-weight: bold;
+        }
+
+        .ribbon-links a {
+            color: var(--brand-gold);
+            font-weight: 700;
+        }
+
+        .language-selector {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .language-selector select {
+            background: transparent;
+            border: none;
+            color: var(--brand-white);
+            font-family: var(--font-body);
+            cursor: pointer;
+            outline: none;
+        }
+
+        /* Chatbot Icon */
+        .chatbot-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background-color: var(--brand-gold);
+            color: var(--brand-dark);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 999;
+            transition: transform 0.3s ease;
+        }
+        .chatbot-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* 2. Hero Section */
+        .hero-section {
+            position: relative;
+            height: calc(100vh - var(--ribbon-height));
+            background-color: var(--brand-blue);
+            display: flex;
+            align-items: center;
             overflow: hidden;
         }
 
-        #three-canvas-container {
+        #hero-canvas {
             position: absolute;
             top: 0;
             left: 0;
@@ -129,356 +193,721 @@
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
+            color: var(--brand-white);
+            max-width: 850px;
+            pointer-events: none;
         }
 
         .hero-tagline {
             font-size: 4rem;
             line-height: 1.1;
-            margin-bottom: 24px;
-            color: #ffffff;
-        }
-
-        .hero-tagline span {
-            color: var(--gold);
+            margin-bottom: 1.5rem;
+            color: var(--brand-gold);
         }
 
         .hero-overview {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            max-width: 600px;
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
         }
 
-        .cta-group {
+        .hero-buttons {
             display: flex;
-            gap: 20px;
+            gap: 1rem;
+            pointer-events: auto;
         }
 
-        .btn-primary, .btn-secondary {
-            padding: 14px 32px;
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 4px;
             font-weight: 700;
-            border-radius: 2px;
-            letter-spacing: 0.5px;
             text-transform: uppercase;
-            font-size: 0.9rem;
+            letter-spacing: 1px;
             cursor: pointer;
             transition: all 0.3s ease;
+            border: 2px solid transparent;
+            display: inline-block;
         }
 
         .btn-primary {
-            background: var(--gold);
-            color: var(--bg-dark);
-            border: 1px solid var(--gold);
+            background-color: var(--brand-gold);
+            color: var(--brand-dark);
         }
 
         .btn-primary:hover {
-            background: transparent;
-            color: var(--gold);
+            background-color: transparent;
+            border-color: var(--brand-gold);
+            color: var(--brand-gold);
         }
 
         .btn-secondary {
-            background: transparent;
-            color: var(--text-light);
-            border: 1px solid var(--card-border);
+            background-color: transparent;
+            border-color: var(--brand-white);
+            color: var(--brand-white);
         }
 
         .btn-secondary:hover {
-            border-color: var(--gold);
+            background-color: var(--brand-white);
+            color: var(--brand-dark);
         }
 
-        /* General Section Styling */
-        section {
-            padding: 100px 10%;
-            position: relative;
-            z-index: 2;
-            background: var(--bg-darker);
+        /* 3. Industry Specialisation */
+        .industry-section {
+            background-color: var(--brand-light-bg);
         }
 
-        .section-header {
-            margin-bottom: 60px;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            color: var(--gold);
-            margin-bottom: 16px;
-        }
-
-        /* Industry Specialisation */
         .industry-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 24px;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
         }
 
         .industry-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            padding: 40px 24px;
-            flex: 1 1 250px;
+            background: var(--brand-white);
+            padding: 2.5rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             text-align: center;
-            transition: transform 0.3s, background 0.3s;
-            border-radius: 4px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 4px solid transparent;
+            min-height: 140px;
         }
 
         .industry-card:hover {
-            transform: translateY(-10px);
-            background: rgba(197, 168, 128, 0.05);
-            border-color: var(--gold);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-bottom: 4px solid var(--brand-gold);
         }
 
-        .industry-card h3 {
+        .industry-card h4 {
             font-size: 1.2rem;
-            color: var(--text-light);
+            color: var(--brand-blue);
         }
 
-        /* Service Offerings */
+        /* 4. Service Offerings */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
         }
 
-        .service-tile {
-            padding: 40px;
-            background: linear-gradient(145deg, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0.2) 100%);
-            border-top: 2px solid var(--gold);
-            transition: all 0.3s;
+        .service-card {
+            padding: 2.5rem;
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            display: block;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            background: var(--brand-white);
+        }
+        
+        .service-card:hover {
+            border-color: var(--brand-gold);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.04);
         }
 
-        .service-tile:hover {
-            background: var(--card-bg);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        .service-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--brand-blue);
         }
 
-        /* Delivery Models */
-        .delivery-container {
+        /* 5. Delivery Models */
+        .delivery-section {
+            background-color: var(--brand-dark);
+            color: var(--brand-white);
+        }
+        
+        .delivery-section .section-title {
+            color: var(--brand-gold);
+        }
+
+        .delivery-flex {
             display: flex;
-            height: 400px;
-            gap: 20px;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
         }
 
-        .delivery-card {
-            flex: 1;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            transition: flex 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.3s;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
+        .delivery-model {
+            flex: 1 1 300px;
+            background: rgba(255,255,255,0.03);
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            border-top: 2px solid var(--brand-gold);
+            transition: background 0.4s ease, transform 0.4s ease;
         }
 
-        .delivery-card:hover {
-            flex: 2.5;
-            background: rgba(197, 168, 128, 0.1);
+        .delivery-model:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-5px);
         }
 
-        .delivery-card h3 {
-            font-size: 2rem;
-            margin-bottom: 16px;
-            color: var(--gold);
+        .delivery-model h4 {
+            color: var(--brand-gold);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
 
-        .delivery-content {
-            opacity: 0.6;
-            transition: opacity 0.5s;
-        }
-
-        .delivery-card:hover .delivery-content {
-            opacity: 1;
-        }
-
-        /* Integrated Expertise */
+        /* 6. Integrated Expertise */
         .expertise-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 1.5rem;
         }
 
-        .expert-tile {
-            border: 1px solid var(--card-border);
-            padding: 40px 20px;
+        .expertise-tile {
+            background: var(--brand-blue);
+            color: var(--brand-white);
+            padding: 3rem 2rem;
             text-align: center;
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: var(--gold);
-            background: transparent;
-            transition: background 0.3s;
+            border-radius: 4px;
+            transition: background 0.3s, color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
         }
 
-        .expert-tile:hover {
-            background: var(--gold);
-            color: var(--bg-dark);
+        .expertise-tile:hover {
+            background: var(--brand-gold);
+            color: var(--brand-dark);
         }
 
-        /* Knowledge Hub */
-        .hub-grid {
+        .expertise-tile h4 {
+            font-size: 1.25rem;
+        }
+
+        /* 7. Knowledge Hub */
+        .insights-section {
+            background-color: var(--brand-light-bg);
+        }
+
+        .insights-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
-        .hub-item {
-            border-bottom: 1px solid var(--card-border);
-            padding-bottom: 20px;
+        .insight-card {
+            background: var(--brand-white);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            padding: 2.5rem;
+            transition: transform 0.3s;
         }
         
-        .hub-category {
-            font-size: 0.8rem;
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            display: block;
+        .insight-card:hover {
+            transform: translateY(-5px);
         }
 
-        /* Global Footer */
+        .insight-tag {
+            font-size: 0.8rem;
+            color: var(--brand-gold);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            display: inline-block;
+        }
+
+        .insight-title {
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--brand-blue);
+            line-height: 1.3;
+        }
+
+        .insight-link {
+            font-weight: 700;
+            color: var(--brand-gold);
+            margin-top: auto;
+            padding-top: 1.5rem;
+            display: inline-block;
+        }
+
+        /* 8. Global Responsive Footer */
         .global-footer {
-            background-color: var(--bg-dark);
-            padding: 80px 10% 40px;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            background-color: #070B13;
+            color: #8E9AA8;
+            padding: 5rem 0 2rem;
+            font-family: var(--font-body);
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: 2.2fr 1.2fr 1.2fr 1.2fr;
-            gap: 40px;
-            margin-bottom: 60px;
+            gap: 3rem;
+            margin-bottom: 4rem;
         }
 
-        .footer-col h4 {
-            color: var(--gold);
-            margin-bottom: 24px;
+        .global-footer h3 {
+            color: #C5A880;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
             font-size: 1.1rem;
+            text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        .brand-title {
+        .footer-brand h2 {
+            color: var(--brand-white);
             font-size: 1.5rem;
-            margin-bottom: 8px;
-            color: var(--text-light);
+            margin-bottom: 0.5rem;
         }
 
-        .brand-sub {
-            color: var(--gold);
+        .footer-tagline {
+            color: #C5A880;
             font-variant: small-caps;
-            font-weight: bold;
-            margin-bottom: 16px;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
             display: block;
         }
 
-        .brand-text {
-            color: var(--text-muted);
-            margin-bottom: 24px;
-            font-size: 0.95rem;
+        .footer-desc {
+            margin-bottom: 2rem;
+            max-width: 90%;
         }
 
         .metric-badge {
             display: inline-flex;
             align-items: center;
             background: rgba(255,255,255,0.03);
-            border: 1px solid var(--card-border);
-            padding: 12px 20px;
+            padding: 1rem 1.25rem;
             border-radius: 4px;
+            border-left: 3px solid #C5A880;
         }
 
-        .metric-gold {
-            color: var(--gold);
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-right: 12px;
-            font-family: var(--font-head);
+        .metric-value {
+            color: #C5A880;
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-right: 1rem;
+            line-height: 1;
         }
 
-        .metric-text {
-            color: #ffffff;
+        .metric-label {
+            color: var(--brand-white);
             font-size: 0.9rem;
-            font-weight: 500;
+            line-height: 1.3;
         }
 
-        .footer-links {
+        .footer-links, .footer-offices {
             list-style: none;
         }
 
-        .footer-links li {
-            margin-bottom: 12px;
+        .footer-links li, .footer-offices li {
+            margin-bottom: 0.85rem;
         }
 
         .footer-links a {
-            color: var(--text-muted);
-            font-size: 0.95rem;
+            color: #8E9AA8;
         }
 
         .footer-links a:hover {
-            color: var(--gold);
+            color: #C5A880;
         }
 
-        .geo-list li {
-            color: var(--text-muted);
-            margin-bottom: 12px;
+        .footer-offices li {
             display: flex;
-            align-items: center;
-            gap: 8px;
+            align-items: flex-start;
         }
 
-        .geo-icon {
-            color: var(--gold);
+        .office-icon {
+            color: #C5A880;
+            margin-right: 10px;
             font-size: 1.1rem;
+            line-height: 1.4;
         }
 
-        /* Floating Chatbot */
-        #chatbot-icon {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: var(--gold);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-            z-index: 9999;
-            transition: transform 0.3s;
+        .footer-bottom {
+            border-top: 1px solid rgba(142, 154, 168, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.85rem;
         }
 
-        #chatbot-icon:hover {
-            transform: scale(1.1);
-        }
-
-        #chatbot-icon svg {
-            width: 30px;
-            height: 30px;
-            fill: var(--bg-dark);
-        }
-
-        /* Responsive */
+        /* Responsive Breakpoints */
         @media (max-width: 1024px) {
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
             .expertise-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-tagline {
+                font-size: 3rem;
             }
         }
 
         @media (max-width: 768px) {
-            .delivery-container {
-                flex-direction: column;
-                height: auto;
-            }
-            .delivery-card {
-                padding: 30px;
+            .hero-tagline {
+                font-size: 2.25rem;
             }
             .footer-grid {
                 grid-template-columns: 1fr;
+                gap: 2.5rem;
             }
+            .top-ribbon {
+                justify-content: center;
+                flex-wrap: wrap;
+                height: auto;
+                padding: 10px;
+                gap: 1rem;
+            }
+            body {
+                padding-top: 80px;
+            }
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-buttons {
+                flex-direction: column;
+            }
+            .btn {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-ribbon">
+        <div class="ribbon-search">
+            <div class="search-input-wrapper">
+                <input type="text" placeholder="Search Kayak...">
+                <span class="search-icon" title="Search Kayak">🔍 IN</span>
+            </div>
+            <div class="search-input-wrapper">
+                <input type="text" placeholder="Search Web...">
+                <span class="search-icon" title="Search Google">🔍 WWW</span>
+            </div>
+        </div>
+        <div class="ribbon-links">
+            <a href="/register" target="_top">Register for Insights</a>
+        </div>
+        <div class="language-selector" title="Language/Region">
+            🌍
+            <select id="lang-select">
+                <option value="en-IN">India (EN)</option>
+                <option value="en-US">Global (EN)</option>
+                <option value="fr-FR">France (FR)</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="chatbot-btn" title="Chat with AI">
+        💬
+    </div>
+
+    <section class="hero-section">
+        <canvas id="hero-canvas"></canvas>
+        <div class="container hero-content">
+            <h1 class="hero-tagline">Navigating Complexity.<br>Illuminating Risk.<br>Engineering Resilience.</h1>
+            <p class="hero-overview">Kayak Strategic Advisors, your trusted partner for Governance, Ethics, Risk and Compliance Services, and AI-led Human-managed Consulting. We deliver institutional-grade solutions to enterprise India’s most complex challenges.</p>
+            <div class="hero-buttons">
+                <a href="#what-we-do" class="btn btn-primary" target="_top">What we do?</a>
+                <a href="#tech-platforms" class="btn btn-secondary" target="_top">Tech Platforms</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="industry-section">
+        <div class="container">
+            <h2 class="section-title">Industry Specialisation</h2>
+            <div class="industry-grid">
+                <a href="/industries/pharma-healthcare" class="industry-card" target="_top">
+                    <h4>Pharma, Healthcare & Lifesciences</h4>
+                </a>
+                <a href="/industries/manufacturing-mobility" class="industry-card" target="_top">
+                    <h4>Advanced Manufacturing & Mobility</h4>
+                </a>
+                <a href="/industries/tech-internet" class="industry-card" target="_top">
+                    <h4>Tech and Internet</h4>
+                </a>
+                <a href="/industries/retail-consumer" class="industry-card" target="_top">
+                    <h4>Retail and Consumer</h4>
+                </a>
+                <a href="/industries/financial-services" class="industry-card" target="_top">
+                    <h4>Financial Services</h4>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="what-we-do">
+        <div class="container">
+            <h2 class="section-title">Integrated Service Offerings</h2>
+            <div class="services-grid">
+                <a href="/what-we-do/ethics-and-governance" class="service-card" target="_top">
+                    <h4>Ethics and Governance</h4>
+                    <p>Building resilient corporate frameworks and ensuring institutional integrity.</p>
+                </a>
+                <a href="/what-we-do/forensics-and-investigations" class="service-card" target="_top">
+                    <h4>Forensics and Investigative</h4>
+                    <p>Uncovering financial discrepancies and managing complex investigations.</p>
+                </a>
+                <a href="/what-we-do/business-advisory" class="service-card" target="_top">
+                    <h4>Business Advisory</h4>
+                    <p>Strategic counsel to navigate growth, restructuring, and optimization.</p>
+                </a>
+                <a href="/what-we-do/compliance-and-policy" class="service-card" target="_top">
+                    <h4>Compliance and Policy</h4>
+                    <p>Navigating dynamic regulatory landscapes with robust policy design.</p>
+                </a>
+                <a href="/what-we-do/Tailored-Tech-Platforms" class="service-card" target="_top" id="tech-platforms">
+                    <h4>Tailored Tech Platforms</h4>
+                    <p>Custom technology solutions driving automation and risk visibility.</p>
+                </a>
+                <a href="/what-we-do/Other-Services" class="service-card" target="_top">
+                    <h4>Other Services</h4>
+                    <p>Specialized consulting engagements tailored to unique enterprise needs.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="delivery-section">
+        <div class="container">
+            <h2 class="section-title">How We Deliver</h2>
+            <div class="delivery-flex">
+                <div class="delivery-model">
+                    <h4>Outsource</h4>
+                    <p>Full function handed to our specialists, delivering a world-class capability without the overhead.</p>
+                </div>
+                <div class="delivery-model">
+                    <h4>Co-source</h4>
+                    <p>Our experts work alongside your team, augmenting capacity, knowledge, and control simultaneously.</p>
+                </div>
+                <div class="delivery-model">
+                    <h4>Loaned Staffing</h4>
+                    <p>A qualified Kayak who fits your requirement is embedded within your organization for defined durations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="expertise-section">
+        <div class="container">
+            <h2 class="section-title">Why KSA?</h2>
+            <div class="expertise-grid">
+                <div class="expertise-tile">
+                    <h4>AI Led, Human Managed</h4>
+                </div>
+                <div class="expertise-tile">
+                    <h4>Industry Experts</h4>
+                </div>
+                <div class="expertise-tile">
+                    <h4>Big 4 Pedigree</h4>
+                </div>
+                <div class="expertise-tile">
+                    <h4>Certified Professionals</h4>
+                </div>
+                <div class="expertise-tile">
+                    <h4>Technology Enabled</h4>
+                </div>
+                <div class="expertise-tile">
+                    <h4>End-to-End Partner</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="insights-section">
+        <div class="container">
+            <h2 class="section-title">KSA Insights & Latest Thinking</h2>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <span class="insight-tag">Thought Leadership</span>
+                    <h3 class="insight-title">The Future of AI in Risk Management</h3>
+                    <p>Exploring how artificial intelligence is reshaping compliance architectures across enterprise India.</p>
+                    <a href="/insights/ai-risk" class="insight-link" target="_top">Read Article →</a>
+                </div>
+                <div class="insight-card">
+                    <span class="insight-tag">Templates</span>
+                    <h3 class="insight-title">Q3 Regulatory Compliance Checklist</h3>
+                    <p>Download our comprehensive framework for navigating the latest fiscal reporting mandates.</p>
+                    <a href="/insights/compliance-checklist" class="insight-link" target="_top">Download Template →</a>
+                </div>
+                <div class="insight-card">
+                    <span class="insight-tag">Blog</span>
+                    <h3 class="insight-title">Demystifying ESG Governance</h3>
+                    <p>A pragmatic approach to embedding ESG metrics into corporate DNA.</p>
+                    <a href="/insights/esg-governance" class="insight-link" target="_top">Read Blog →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="global-footer">
+        <div class="container">
+            <div class="footer-grid">
+                
+                <div class="footer-brand">
+                    <h2>KAYAK STRATEGIC ADVISORS</h2>
+                    <span class="footer-tagline">Navigating Complexity. Illuminating Risk. Engineering Resilience.</span>
+                    <p class="footer-desc">Premium Risk Advisory, Forensic Accounting, Compliance and Management Consulting.</p>
+                    <div class="metric-badge">
+                        <span class="metric-value">200+</span>
+                        <span class="metric-label">Person-Years<br>of Expertise</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="/what-we-do/ethics-and-governance" target="_top">Ethics & Governance</a></li>
+                        <li><a href="/what-we-do/forensics-and-investigations" target="_top">Forensics & Investigative</a></li>
+                        <li><a href="/what-we-do/business-advisory" target="_top">Business Advisory Services</a></li>
+                        <li><a href="/what-we-do/compliance-and-policy" target="_top">Compliance & Policy</a></li>
+                        <li><a href="/what-we-do/Tailored-Tech-Platforms" target="_top">Tailored Tech Platforms</a></li>
+                        <li><a href="/what-we-do/Other-Services" target="_top">Other Services</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Firm</h3>
+                    <ul class="footer-links">
+                        <li><a href="/Who are we?" target="_top">About Us</a></li>
+                        <li><a href="/Industry Expertise" target="_top">Industry Expertise</a></li>
+                        <li><a href="/the-kayak-perspective" target="_top">The Kayak Perspective</a></li>
+                        <li><a href="/KSA Insights" target="_top">KSA Insights</a></li>
+                        <li><a href="/book-a-consultation" target="_top">Book a Consultation</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Our Offices</h3>
+                    <ul class="footer-offices">
+                        <li><span class="office-icon">⊙</span> Mumbai</li>
+                        <li><span class="office-icon">⊙</span> Navi Mumbai</li>
+                        <li><span class="office-icon">⊙</span> Bengaluru</li>
+                        <li><span class="office-icon">⊙</span> Hyderabad</li>
+                        <li><span class="office-icon">⊙</span> Ahmedabad</li>
+                        <li><span class="office-icon">⊙</span> Delhi</li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kayak Strategic Advisors. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Language Auto-Selection Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const langSelect = document.getElementById('lang-select');
+            try {
+                const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                if (tz.includes('Calcutta') || tz.includes('Kolkata') || tz.includes('India')) {
+                    langSelect.value = 'en-IN';
+                } else if (tz.includes('Europe/Paris')) {
+                    langSelect.value = 'fr-FR';
+                } else {
+                    langSelect.value = 'en-US';
+                }
+            } catch (e) {
+                console.warn("Timezone detection failed, defaulting to Global (EN)");
+            }
+        });
+
+        // 2. Native HTML5 Canvas 2D Animation (Bypasses Google Sites WebGL Blocks)
+        function initResilienceNetwork() {
+            const canvas = document.getElementById('hero-canvas');
+            if (!canvas) return;
+            
+            const ctx = canvas.getContext('2d');
+            const heroSection = document.querySelector('.hero-section');
+            
+            let width, height;
+            let particles = [];
+            
+            // Set sizing safely for iframes
+            function resize() {
+                width = heroSection.clientWidth || window.innerWidth;
+                height = heroSection.clientHeight || window.innerHeight;
+                canvas.width = width;
+                canvas.height = height;
+            }
+            
+            window.addEventListener('resize', resize);
+            resize();
+
+            // Particle Configuration
+            const particleCount = width < 768 ? 40 : 80; 
+            const connectionDistance = 150;
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * width;
+                    this.y = Math.random() * height;
+                    this.vx = (Math.random() - 0.5) * 0.8;
+                    this.vy = (Math.random() - 0.5) * 0.8;
+                    this.radius = Math.random() * 1.5 + 0.5;
+                }
+
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    // Smooth bounce off edges
+                    if (this.x < 0 || this.x > width) this.vx *= -1;
+                    if (this.y < 0 || this.y > height) this.vy *= -1;
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(197, 168, 128, 0.6)'; // KSA Gold
+                    ctx.fill();
+                }
+            }
+
+            // Initialize particles
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+
+            // Animation Loop
+            function animate() {
+                requestAnimationFrame(animate);
+                ctx.clearRect(0, 0, width, height);
+
+                // Update and draw particles
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+
+                    // Draw connections (Resilience Network)
+                    for (let j = i; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < connectionDistance) {
+                            ctx.beginPath();
+                            // Opacity based on distance
+                            const opacity = (1 - (distance / connectionDistance)) * 0.3;
+                            ctx.strokeStyle = `rgba(197, 168, 128, ${opacity})`;
+                            ctx.lineWidth = 1;
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+            
+            animate();
+        }
+
+        // Ensure DOM is fully loaded before painting canvas
+        window.addEventListener('load', initResilienceNetwork);
+    </script>
+</body>
+</html>
