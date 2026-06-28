@@ -1,0 +1,56 @@
+:root {
+  /* Backgrounds */
+  --bg-primary: #FAFAF8;          /* Light day */
+  --bg-secondary: #F5F2EB;
+  --surface: #FFFFFF;
+  --card-bg: #FFFFFF;
+
+  /* Dark mode overrides via [data-theme="dark"] */
+  --bg-primary-dark: #070B13;
+  --bg-secondary-dark: #1A2B45;
+  --surface-dark: #0F172A;
+  --card-bg-dark: #0F172A;
+
+  /* Brand Accents */
+  --primary-gold: #C5A880;
+  --royal-blue: #0047AB;
+  --amber: #F39C12;
+  --success: #2E7D32;
+  --warning: #E67E22;
+  --danger: #C62828;
+  --info: #1565C0;
+
+  /* Text */
+  --text-primary: #1A2B45;
+  --text-secondary: #4A5568;
+  --text-on-dark: #FFFFFF;
+  --text-secondary-dark: #8E9AA8;
+
+  /* Borders & Effects */
+  --border: #E2E8F0;
+  --border-dark: #334155;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
+  --shadow-gold: 0 0 0 1px #C5A880;
+
+  /* Typography Scale */
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-tagline: 'Open Sauce', 'Inter', system-ui, sans-serif;
+
+  /* Spacing Scale (4px base) */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+
+  /* Radius */
+  --radius-sm: 6px; --radius-md: 12px; --radius-lg: 20px; --radius-full: 9999px;
+
+  /* Elevation */
+  --elevation-1: 1; --elevation-2: 2; --elevation-3: 3;
+
+  /* Animation */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
